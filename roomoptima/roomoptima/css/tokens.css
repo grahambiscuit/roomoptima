@@ -1,0 +1,42 @@
+/* RoomOptima · css/tokens.css
+   Design tokens. Brand colours come from the Gordon College seal (green and orange). Light and dark palettes. */
+
+:root{
+  --bg:#f3f6f4; --surface:#ffffff; --surface2:#eaf0ec; --fg:#122017; --fg2:#445a4a; --muted:#5b7261;
+  --line:#d6e2d9; --line2:#b4c8ba;
+  --pri:#1a7a3c; --pri-h:#146232; --pri-t:#13692f; --on-pri:#ffffff; --ring:rgba(26,122,60,.2);
+  --acc:#e87c26; --acc-t:#b45309; --acc-soft:#fdeedd; --focus:#c2620f;
+  --side:#0f2617; --side2:#1a3a26; --side-fg:#e6f2e9; --side-mu:#a9c3b0;
+  --ok-bg:#dcfce7; --ok-fg:#14532d; --err-bg:#fee2e2; --err-fg:#991b1b; --inf-bg:#dbeafe; --inf-fg:#1e3a8a;
+  --wn-bg:#fef3c7; --wn-fg:#78350f; --neu-bg:#e5e9e6; --neu-fg:#3f4a42;
+  --ok:#16a34a; --err:#dc2626; --inf:#2563eb; --wn:#ca8a04;
+  --danger:#c62828; --on-danger:#ffffff;
+  --overlay:rgba(6,16,10,.55); --sh:0 1px 3px rgba(15,38,23,.08); --sh-lg:0 16px 48px rgba(15,38,23,.3);
+  --fd:'Space Grotesk','DM Sans',system-ui,sans-serif; --fb:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#09130d; --surface:#111d15; --surface2:#182a1f; --fg:#e7f1e9; --fg2:#a8bdae; --muted:#8aa291;
+    --line:#243629; --line2:#37503e;
+    --pri:#1f8a47; --pri-h:#27a055; --pri-t:#52c982; --ring:rgba(82,201,130,.28);
+    --acc:#f08a3a; --acc-t:#f5a566; --acc-soft:#2e2014; --focus:#f5a566;
+    --side:#060e09; --side2:#12251a; --side-fg:#e6f2e9; --side-mu:#9db8a5;
+    --ok-bg:#12341f; --ok-fg:#8fe0ad; --err-bg:#3d1717; --err-fg:#fca5a5; --inf-bg:#14284d; --inf-fg:#a9c6ff;
+    --wn-bg:#3a2d0c; --wn-fg:#f5d77a; --neu-bg:#24302a; --neu-fg:#b7c6bc;
+    --ok:#34c267; --err:#ef6b6b; --inf:#6b9cff; --wn:#e0b040;
+    --danger:#d04545; --overlay:rgba(0,0,0,.66); --sh:0 1px 3px rgba(0,0,0,.4); --sh-lg:0 16px 48px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#09130d; --surface:#111d15; --surface2:#182a1f; --fg:#e7f1e9; --fg2:#a8bdae; --muted:#8aa291;
+  --line:#243629; --line2:#37503e;
+  --pri:#1f8a47; --pri-h:#27a055; --pri-t:#52c982; --ring:rgba(82,201,130,.28);
+  --acc:#f08a3a; --acc-t:#f5a566; --acc-soft:#2e2014; --focus:#f5a566;
+  --side:#060e09; --side2:#12251a; --side-fg:#e6f2e9; --side-mu:#9db8a5;
+  --ok-bg:#12341f; --ok-fg:#8fe0ad; --err-bg:#3d1717; --err-fg:#fca5a5; --inf-bg:#14284d; --inf-fg:#a9c6ff;
+  --wn-bg:#3a2d0c; --wn-fg:#f5d77a; --neu-bg:#24302a; --neu-fg:#b7c6bc;
+  --ok:#34c267; --err:#ef6b6b; --inf:#6b9cff; --wn:#e0b040;
+  --danger:#d04545; --overlay:rgba(0,0,0,.66); --sh:0 1px 3px rgba(0,0,0,.4); --sh-lg:0 16px 48px rgba(0,0,0,.6);
+  color-scheme:dark;
+}

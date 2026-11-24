@@ -1,0 +1,31 @@
+/* RoomOptima · css/responsive.css
+   Breakpoints and reduced-motion. */
+
+@media (max-width:1000px){
+  .rooms-layout{grid-template-columns:minmax(0,1fr)}
+  .detail{position:static}
+  .prof{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:860px){
+  #login-view{grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);overflow:auto}
+  .brand{padding-block:22px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));flex-direction:row;flex-wrap:wrap;align-items:center;gap:14px}
+  .brand .seal{width:64px;height:64px}
+  .brand h1{font-size:24px}
+  .brand p,.brand .sdg{display:none}
+  .brand::after{display:none}
+  .side{position:fixed;inset:0 auto 0 0;transform:translateX(-102%);transition:transform .2s;box-shadow:var(--sh-lg);padding-top:env(safe-area-inset-top,0px)}
+  body.nav-open .side{transform:none}
+  body.nav-open .scrim-nav{display:block;position:fixed;inset:0;z-index:50;background:var(--overlay)}
+  .menu-btn{display:inline-flex}
+  .topbar{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .content{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .grid-2{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:540px){
+  .form-grid,.ms-list{grid-template-columns:minmax(0,1fr)}
+  .chip-user span.nm{display:none}
+  .page-h h1{font-size:21px}
+  .modal-b{padding:16px}
+  .modal-f .btn{flex:1}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

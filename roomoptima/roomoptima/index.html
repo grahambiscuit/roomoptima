@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RoomOptima</title>
+<link rel="icon" href="assets/seal.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/landing.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- LANDING -->
+<div id="landing-view">
+  <header class="ld-nav">
+    <a class="ld-brand" href="#" data-act="scroll-top" aria-label="RoomOptima home"><img src="assets/seal.png" alt="" width="36" height="36"><span><b>RoomOptima</b><small>Gordon College</small></span></a>
+    <nav class="ld-links" aria-label="Page sections">
+      <button type="button" class="link" data-act="scroll" data-to="ld-how">How it works</button>
+      <button type="button" class="link" data-act="scroll" data-to="ld-rules">Booking rules</button>
+      <button type="button" class="link" data-act="scroll" data-to="ld-buildings">Buildings</button>
+    </nav>
+    <button type="button" class="btn btn-pri" data-act="show-login">Sign in</button>
+  </header>
+
+  <section class="ld-hero">
+    <div class="ld-copy">
+      <h1>Book a room that fits your group.</h1>
+      <p>RoomOptima shows which Gordon College rooms are free, how many people each one holds and what equipment it has. Pick a room, choose your dates and get it confirmed.</p>
+      <div class="ld-cta">
+        <button type="button" class="btn btn-pri btn-lg" data-act="show-login">Sign in to book</button>
+        <button type="button" class="btn btn-lg" data-act="scroll" data-to="ld-how">See how it works</button>
+      </div>
+      <p class="ld-note">Use your @gordoncollege.edu.ph account.</p>
+    </div>
+    <figure class="ld-board" aria-labelledby="ld-board-t">
+      <figcaption id="ld-board-t"><b>Rooms today</b><span id="ld-date"></span></figcaption>
+      <div id="ld-board"></div>
+      <p class="ld-legend"><span class="k conf"></span>Confirmed <span class="k resv"></span>Reserved <span class="k now"></span>Now</p>
+    </figure>
+  </section>
+
+  <section class="ld-sec" id="ld-how">
+    <h2>How booking works</h2>
+    <ol class="ld-steps">
+      <li><h3>Find a room</h3><p>Filter by building, capacity and equipment. Or enter your group size and time and let Smart Recommend rank the rooms.</p></li>
+      <li><h3>Send your request</h3><p>Choose a start and end date and time, enter your group size and agree to the room policy. The form checks every field before it sends.</p></li>
+      <li><h3>Get it confirmed</h3><p>An administrator confirms reserved bookings. You can cancel from My Bookings and say why.</p></li>
+    </ol>
+  </section>
+
+  <section class="ld-sec ld-alt" id="ld-rules">
+    <h2>What RoomOptima checks for you</h2>
+    <dl class="ld-rules" id="ld-rules-list"></dl>
+  </section>
+
+  <section class="ld-sec" id="ld-buildings">
+    <h2>Two buildings, two sides each</h2>
+    <p class="ld-lead">Every room is listed with its building, floor and side, so you know where to walk.</p>
+    <div class="ld-bld" id="ld-bld"></div>
+  </section>
+
+  <footer class="ld-foot">
+    <img src="assets/seal.png" alt="Gordon College seal" width="52" height="52">
+    <div>
+      <b>Gordon College · College of Computer Studies</b>
+      <p>RoomOptima by BSCS 3-C · Team Falcons Philippines</p>
+      <p>Supports SDG 9 (Industry, Innovation and Infrastructure) and SDG 11 (Sustainable Cities and Communities).</p>
+    </div>
+    <button type="button" class="link" data-act="policies">Terms &amp; Room Use Policy</button>
+  </footer>
+</div>
+
+<!-- LOGIN -->
+<div id="login-view" hidden>
+  <section class="brand">
+    <img class="seal" src="assets/seal.png" alt="Gordon College seal">
+    <div>
+      <h1>Gordon College</h1>
+      <div class="college">College of Computer Studies · Est. 1999</div>
+    </div>
+    <p>RoomOptima finds, books and manages campus rooms. Pick a room that fits your group, see what is free, and get a booking confirmed in one place.</p>
+    <div class="sdg">Aligned with SDG 9 (Industry, Innovation and Infrastructure) and SDG 11 (Sustainable Cities and Communities).</div>
+  </section>
+  <section class="login-side">
+    <form class="login-card" id="lg-form" data-submit="lg" novalidate>
+      <button type="button" class="link back" data-act="show-landing">Back to home</button>
+      <div>
+        <h2>Sign in</h2>
+        <p class="muted" style="margin-top:4px">Use your Gordon College institutional account.</p>
+      </div>
+      <div class="form-err" id="lg-err" role="alert"></div>
+      <div class="fld">
+        <label for="lg-email">Institutional email <span class="req" aria-hidden="true">*</span></label>
+        <input class="in" id="lg-email" data-f="lg" type="email" autocomplete="username" placeholder="firstname.lastname@gordoncollege.edu.ph" aria-describedby="lg-email-e">
+        <div class="err" id="lg-email-e" role="alert"></div>
+      </div>
+      <div class="fld">
+        <label for="lg-pass">Password <span class="req" aria-hidden="true">*</span></label>
+        <div class="pw-wrap">
+          <input class="in" id="lg-pass" data-f="lg" type="password" autocomplete="current-password" placeholder="At least 8 characters" aria-describedby="lg-pass-e">
+          <button type="button" class="eye" data-act="toggle-pass" data-for="lg-pass" aria-label="Show password" aria-pressed="false"><svg class="ic ic-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="ic ic-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><path d="M3 3l18 18"/><path d="M10.6 5.1A10.7 10.7 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.5 6.6C3.8 8.4 2 12 2 12s3.6 7 10 7c1.7 0 3.2-.4 4.5-1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button>
+        </div>
+        <div class="err" id="lg-pass-e" role="alert"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+        <label class="chk"><input type="checkbox" id="lg-keep"> Keep me signed in</label>
+        <button type="button" class="link" data-act="forgot">Forgot password?</button>
+      </div>
+      <div class="fld">
+        <label class="chk"><input type="checkbox" id="lg-terms" data-f="lg" aria-describedby="lg-terms-e"><span>I agree to the <button type="button" class="link" data-act="policies">Terms &amp; Conditions and Room Use Policy</button></span></label>
+        <div class="err" id="lg-terms-e" role="alert"></div>
+      </div>
+      <button class="btn btn-pri btn-block" type="submit">Sign in</button>
+      <p class="muted" style="font-size:12px;text-align:center">Gordon College · College of Computer Studies<br>BSCS 3-C · Team Falcons Philippines</p>
+    </form>
+  </section>
+</div>
+
+<!-- APP -->
+<div id="app" hidden>
+  <aside class="side" id="side" aria-label="Main navigation">
+    <div class="side-brand">
+      <img src="assets/seal.png" alt="Gordon College seal">
+      <div><b>RoomOptima</b><small>Gordon College · CCS</small></div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot">
+      <div class="who"><div class="avatar" id="sf-av">GC</div><div><b id="sf-name"></b><small id="sf-role"></small></div></div>
+      <button class="btn btn-sm" data-act="go" data-to="profile">My Profile</button>
+      <button class="btn btn-sm" data-act="policies">Terms &amp; Policies</button>
+      <button class="btn btn-sm" data-act="signout">Sign Out</button>
+    </div>
+  </aside>
+  <div class="scrim-nav" data-act="toggle-nav"></div>
+  <div class="main">
+    <header class="topbar">
+      <button class="menu-btn" data-act="toggle-nav" aria-label="Open menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <h2 id="top-title">Dashboard</h2>
+      <button class="chip-user" data-act="go" data-to="profile" aria-label="Open my profile"><span class="avatar" id="tb-av" style="width:30px;height:30px">GC</span><span class="nm" id="tb-name"></span></button>
+    </header>
+    <main class="content" id="content"><div class="page" id="view"></div></main>
+  </div>
+</div>
+
+<div id="modal-root"></div>
+<div id="modal-root2"></div>
+<div id="toasts" role="status" aria-live="polite"></div>
+
+<script src="js/utils.js" defer></script>
+<script src="js/config.js" defer></script>
+<script src="js/store.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script src="js/policy.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/router.js" defer></script>
+<script src="js/pages/dashboard.js" defer></script>
+<script src="js/pages/rooms.js" defer></script>
+<script src="js/pages/bookings.js" defer></script>
+<script src="js/pages/schedule.js" defer></script>
+<script src="js/pages/recommend.js" defer></script>
+<script src="js/pages/settings.js" defer></script>
+<script src="js/pages/profile.js" defer></script>
+<script src="js/landing.js" defer></script>
+<script src="js/actions.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
